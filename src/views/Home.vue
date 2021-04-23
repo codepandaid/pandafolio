@@ -1,38 +1,38 @@
 <template>
   <div id="home" class="home">
     <div class="row align-items-start text-left">
-      <div class="col-lg-7">
+      <div class="col-12 col-md-12 col-lg-7">
         <div class="card">
           <h2 class="section-title">Description</h2>
           <div class="row align-items-start text-left">
-            <div class="col-lg-4">
+            <div class="col-12 col-lg-4">
               <span class="section-subtitle">
                 Bio
               </span>
             </div>
-            <div class="col-lg-8">
+            <div class="col-12 col-lg-8">
               <span class="section-text">
                 Computer Science Student’s who loves tempe orek
               </span>
             </div>
 
-            <div class="col-lg-4">
+            <div class="col-12 col-lg-4">
               <span class="section-subtitle">
                 Age
               </span>
             </div>
-            <div class="col-lg-8">
+            <div class="col-12 col-lg-8">
               <span class="section-text">
                 20 years old
               </span>
             </div>
 
-            <div class="col-lg-4">
+            <div class="col-12 col-lg-4">
               <span class="section-subtitle">
                 Address
               </span>
             </div>
-            <div class="col-lg-8">
+            <div class="col-12 col-lg-8">
               <span class="section-text">
                 Veteran Street, South Bekasi
               </span>
@@ -40,17 +40,17 @@
           </div>
         </div>
       </div>
-      <div class="col-lg-5">
+      <div class="col-12 col-md-12 col-lg-5">
         <div class="card">
           <h2 class="section-title">Contact</h2>
 
           <div class="row align-items-start text-left">
-            <div class="col-lg-4">
+            <div class="col-12 col-lg-4">
               <span class="section-subtitle">
                 Email
               </span>
             </div>
-            <div class="col-lg-8">
+            <div class="col-12 col-lg-8">
               <span class="section-text">
                 Computer Science Student’s who loves tempe orek
               </span>
@@ -58,12 +58,12 @@
           </div>
 
           <div class="row align-items-start text-left">
-            <div class="col-lg-4">
+            <div class="col-12 col-lg-4">
               <span class="section-subtitle">
                 Phone/WA
               </span>
             </div>
-            <div class="col-lg-8">
+            <div class="col-12 col-lg-8">
               <span class="section-text">
                 +62-895-0715-3745
               </span>
@@ -71,12 +71,12 @@
           </div>
 
           <div class="row align-items-start text-left">
-            <div class="col-lg-4">
+            <div class="col-12 col-lg-4">
               <span class="section-subtitle">
                 Line
               </span>
             </div>
-            <div class="col-lg-8">
+            <div class="col-12 col-lg-8">
               <span class="section-text">
                 berly_st2120
               </span>
@@ -87,7 +87,7 @@
     </div>
 
     <div class="row align-items-center text-center">
-      <div class="col-lg-3">
+      <div class="col-6 col-md-6 col-lg-3">
         <div class="card-blue">
           <img class="overview" alt="logo-panda" src="../assets/icon/overview-1.svg" />
         </div>
@@ -98,7 +98,7 @@
           7 Projects
         </span>
       </div>
-      <div class="col-lg-3">
+      <div class="col-6 col-md-6 col-lg-3">
         <div class="card-blue">
           <img class="overview" alt="logo-panda" src="../assets/icon/overview-2.svg" />
         </div>
@@ -109,7 +109,7 @@
           150 points
         </span>
       </div>
-      <div class="col-lg-3">
+      <div class="col-6 col-md-6 col-lg-3">
         <div class="card-blue">
           <img class="overview" alt="logo-panda" src="../assets/icon/overview-3.svg" />
         </div>
@@ -120,7 +120,7 @@
           6 skills
         </span>
       </div>
-      <div class="col-lg-3">
+      <div class="col-6 col-md-6 col-lg-3">
         <div class="card-blue">
           <img class="overview" alt="logo-panda" src="../assets/icon/overview-4.svg" />
         </div>
@@ -146,6 +146,10 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
+// * {
+//   border: solid 1px red;
+// }
+
 .home {
   width: 100%;
   max-width: 1200px;
@@ -157,4 +161,21 @@ export default Vue.extend({
     padding-bottom: 8px;
   }
 }
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {}
+
+@media screen and (max-width: 767px) {
+  .home {
+    width: 100%;
+    max-width: 300px;
+    padding: 32px 0px;
+    margin: auto;
+
+    .section-subtitle,
+    .section-text {
+      padding-bottom: 8px;
+    }
+  }
+}
+
 </style>
