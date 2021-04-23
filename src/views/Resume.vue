@@ -1,19 +1,19 @@
 <template>
   <div class="resume">
     <div class="row align-items-start text-left">
-      <div class="col-lg-6">
+      <div class="col-12 col-md-12 col-lg-6">
         <div class="row align-items-center">
           <div class="col-lg-12">
             <div class="card">
               <h2 class="section-title">Skill</h2>
 
               <div class="row align-items-center row-line">
-                <div class="col-lg-8">
+                <div class="col-12 col-lg-8">
                   <span class="section-subtitle">
                     Dart
                   </span>
                 </div>
-                <div class="col-lg-4">
+                <div class="col-12 col-lg-4">
                   <div class="star-container">
                     <div class="row align-items-center">
                       <div class="col">
@@ -37,12 +37,12 @@
               </div>
 
               <div class="row align-items-center row-line">
-                <div class="col-lg-8">
+                <div class="col-12 col-lg-8">
                   <span class="section-subtitle">
                     Mobile Apps Development
                   </span>
                 </div>
-                <div class="col-lg-4">
+                <div class="col-12 col-lg-4">
                   <div class="star-container">
                     <div class="row align-items-center">
                       <div class="col">
@@ -66,12 +66,12 @@
               </div>
 
               <div class="row align-items-center row-line last">
-                <div class="col-lg-8">
+                <div class="col-12 col-lg-8">
                   <span class="section-subtitle">
                     Java
                   </span>
                 </div>
-                <div class="col-lg-4">
+                <div class="col-12 col-lg-4">
                   <div class="star-container">
                     <div class="row align-items-center">
                       <div class="col">
@@ -95,13 +95,13 @@
               </div>
             </div>
           </div>
-          <div class="col-lg-12">
+          <div class="col-12 col-lg-12">
             <div class="card">
               <h2 class="section-title">Education</h2>
 
               <div class="row align-items-start stepper-line">
                 <div class="stepper-dots"></div>
-                <div class="col-lg-12 row-line">
+                <div class="col-12 col-lg-12 row-line">
                   <div class="stepper-content">
                     <span class="section-subtitle">
                       Dart
@@ -118,7 +118,7 @@
 
               <div class="row align-items-start stepper-line stepper-last">
                 <div class="stepper-dots"></div>
-                <div class="col-lg-12 row-line last">
+                <div class="col-12 col-lg-12 row-line last">
                   <div class="stepper-content">
                     <span class="section-subtitle">
                       SMA Negeri 2 Kota Bekasi
@@ -137,12 +137,12 @@
         </div>
       </div>
 
-      <div class="col-lg-6">
+      <div class="col-12 col-md-12 col-lg-6">
         <div class="card">
           <h2 class="section-title">Experience</h2>
 
           <div class="row align-items-start stepper-line">
-            <div class="col-lg-12 row-line">
+            <div class="col-12 col-lg-12 row-line">
               <div class="stepper-dots"></div>
               <div class="stepper-content">
                 <span class="section-subtitle">
@@ -162,7 +162,7 @@
           </div>
 
           <div class="row align-items-start stepper-line">
-            <div class="col-lg-12 row-line">
+            <div class="col-12 col-lg-12 row-line">
               <div class="stepper-dots"></div>
               <div class="stepper-content">
                 <span class="section-subtitle">
@@ -182,7 +182,7 @@
           </div>
 
           <div class="row align-items-start stepper-line stepper-last">
-            <div class="col-lg-12 row-line last">
+            <div class="col-12 col-lg-12 row-line last">
               <div class="stepper-dots"></div>
               <div class="stepper-content">
                 <span class="section-subtitle">
@@ -263,5 +263,36 @@ export default Vue.extend({
   max-width: 24px;
   height: auto;
   padding-bottom: 12px;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {}
+
+@media screen and (max-width: 767px) {
+  .resume {
+    width: 100%;
+    max-width: 300px;
+    padding: 32px 0px;
+    margin: auto;
+  }
+
+  .stepper-line {
+    padding: 0px 12px;
+    border-left: solid 2px #5577F0;
+  }
+
+  .stepper-dots {
+    content: "";
+    position: absolute;
+    transform: translateX(-22px);
+    background-color: #5577F0;
+    width: 100%;
+    max-width: 16px;
+    height: 16px;
+    border-radius: 50%;
+  }
+
+  .stepper-line.stepper-last {
+    border-left: solid 2px rgba(0, 0, 0, 0);
+  }
 }
 </style>

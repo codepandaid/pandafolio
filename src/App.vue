@@ -3,10 +3,10 @@
     <div class="overlay">
       <div class="avatar-container">
         <div class="row align-items-center">
-          <div class="col-lg-4 text-center">
+          <div class="col-12 col-lg-4 text-center">
             <img class="avatar" src="./assets/avatar.png" alt="avatar">
           </div>
-          <div class="col-lg-8 text-left">
+          <div class="col-12 col-lg-8 text-left">
             <h1 class="avatar-name">Usada Pandakora</h1>
             <span class="avatar-job">Frontend Developer</span>
           </div>
@@ -42,9 +42,10 @@
 html, body {
   margin: 0px;
   padding: 0px;
+  word-break: break-word;
 }
 
-#app, .overlay {
+#app {
   font-family: 'Inter', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -94,6 +95,32 @@ html, body {
   }
 }
 
+#nav {
+  padding: 32px 0px;
+  padding-bottom: 0px;
+
+  a {
+    font-size: 24px;
+    font-weight: bold;
+    color: rgba(53, 81, 181, 0.4);
+    padding-bottom: 16px;
+    width: 100%;
+    max-width: auto;
+    text-underline-offset: 16px;
+    text-decoration-thickness: 4px;
+
+    &.router-link-exact-active {
+      color: #3551B5;
+
+    }
+  }
+}
+
+/* 
+===================================================================
+Common
+===================================================================
+*/
 .avatar-container {
   width: 100%;
   max-width: 480px;
@@ -141,27 +168,6 @@ html, body {
   border-radius: 16px;
   padding: 32px;
   margin: 24px;
-}
-
-#nav {
-  padding: 32px 0px;
-  padding-bottom: 0px;
-
-  a {
-    font-size: 24px;
-    font-weight: bold;
-    color: rgba(53, 81, 181, 0.4);
-    padding-bottom: 16px;
-    width: 100%;
-    max-width: auto;
-    text-underline-offset: 16px;
-    text-decoration-thickness: 4px;
-
-    &.router-link-exact-active {
-      color: #3551B5;
-
-    }
-  }
 }
 
 .avatar {
@@ -219,6 +225,7 @@ html, body {
   background-color: white;
   border-radius: 8px;
   width: 100%;
+  max-width: 192px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
   padding: 8px;
@@ -292,7 +299,6 @@ Content
   font-weight: 400;
   line-height: 1.7em;
 }
-
 
 /* 
 ===================================================================
@@ -672,4 +678,345 @@ Util
   flex-basis: 100.00%;
   max-width: 100.00%;
 }
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  /* 
+  ===================================================================
+  Util
+  ===================================================================
+  */
+  .col-md-1 {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 8.33%;
+    max-width: 8.33%;
+  }
+
+  .col-md-2 {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 16.666%;
+    max-width: 16.666%;
+  }
+
+  .col-md-3 {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 25.00%;
+    max-width: 25.00%;
+  }
+
+  .col-md-4 {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 33.33%;
+    max-width: 33.33%;
+  }
+
+  .col-md-5 {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 41.666%;
+    max-width: 41.666%;
+  }
+
+  .col-md-6 {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 50.00%;
+    max-width: 50.00%;
+  }
+
+  .col-md-7 {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 58.33%;
+    max-width: 58.33%;
+  }
+
+  .col-md-8 {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 66.666%;
+    max-width: 66.666%;
+  }
+
+  .col-md-9 {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 75.00%;
+    max-width: 75.00%;
+  }
+
+  .col-md-10 {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 83.33%;
+    max-width: 83.33%;
+  }
+
+  .col-md-11 {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 91.666%;
+    max-width: 91.666%;
+  }
+
+  .col-md-12 {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 100.00%;
+    max-width: 100.00%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  #nav {
+    padding: 16px 0px;
+    padding-bottom: 0px;
+
+    a {
+      font-size: 16px;
+      text-underline-offset: 12px;
+      text-decoration-thickness: 8px;
+    }
+  }
+
+  /* 
+  ===================================================================
+  Common
+  ===================================================================
+  */
+  .avatar-container {
+    width: 100%;
+    max-width: 300px;
+    margin: auto;
+    // padding: 40px;
+    padding: 40px 0px;
+  }
+
+  .nav-container {
+    width: 100%;
+    max-width: 300px;
+    margin: auto;
+  }
+
+  .card {
+    padding: 20px;
+    margin: 12px 4px;
+  }
+
+  .card-blue {
+    background-color: rgba(236, 235, 252, 0.25);
+    border-radius: 16px;
+    padding: 28px;
+    margin: 16px;
+  }
+
+  .btn-default {
+    font-size: 14px;
+  }
+
+  .avatar {
+    width: 100%;
+    max-width: 100px;
+    margin: auto;
+  }
+
+  /* 
+  ===================================================================
+  Content
+  ===================================================================
+  */
+  .avatar-name {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 4px 0px;
+    text-align: center;
+  }
+
+  .avatar-job {
+    font-size: 18px;
+    font-weight: 400;
+    margin: 8px 0px;
+    text-align: center;
+  }
+
+  .project-name {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0px 0px;
+  }
+
+  .project-desc {
+    font-size: 14px;
+    font-weight: normal;
+    margin: 16px 0px;
+    line-height: 1.7em;
+  }
+
+  .section-title {
+    color: #383838;
+    font-size: 20px;
+  }
+
+  .section-subtitle {
+    color: #383838;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.7em;
+  }
+
+  .section-text {
+    color: #383838;
+    font-size: 16px;
+    line-height: 1.7em;
+    padding-bottom: 12px;
+  }
+
+  .section-mini-text {
+    color: rgba(56, 56, 56, 0.7);
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.7em;
+  }
+
+  /* 
+  ===================================================================
+  Util
+  ===================================================================
+  */
+  .col-1 {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 8.33%;
+    max-width: 8.33%;
+  }
+
+  .col-2 {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 16.666%;
+    max-width: 16.666%;
+  }
+
+  .col-3 {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 25.00%;
+    max-width: 25.00%;
+  }
+
+  .col-4 {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 33.33%;
+    max-width: 33.33%;
+  }
+
+  .col-5 {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 41.666%;
+    max-width: 41.666%;
+  }
+
+  .col-6 {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 50.00%;
+    max-width: 50.00%;
+  }
+
+  .col-7 {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 58.33%;
+    max-width: 58.33%;
+  }
+
+  .col-8 {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 66.666%;
+    max-width: 66.666%;
+  }
+
+  .col-9 {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 75.00%;
+    max-width: 75.00%;
+  }
+
+  .col-10 {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 83.33%;
+    max-width: 83.33%;
+  }
+
+  .col-11 {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 91.666%;
+    max-width: 91.666%;
+  }
+
+  .col-12 {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 100.00%;
+    max-width: 100.00%;
+  }
+}
+
 </style>
