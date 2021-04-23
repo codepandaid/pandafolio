@@ -1,35 +1,39 @@
 <template>
   <div id="app">
-    <div class="avatar-container">
-      <div class="row align-items-center">
-        <div class="col-lg-4 text-center">
-          <img class="avatar" src="./assets/avatar.png" alt="avatar">
-        </div>
-        <div class="col-lg-8 text-left">
-          <h1 class="avatar-name">Usada Pandakora</h1>
-          <span class="avatar-job">Frontend Developer</span>
+    <div class="overlay">
+      <div class="avatar-container">
+        <div class="row align-items-center">
+          <div class="col-lg-4 text-center">
+            <img class="avatar" src="./assets/avatar.png" alt="avatar">
+          </div>
+          <div class="col-lg-8 text-left">
+            <h1 class="avatar-name">Usada Pandakora</h1>
+            <span class="avatar-job">Frontend Developer</span>
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="nav-container">
-      <div id="nav">
-        <div class="row align-items-center">
-          <div class="col-lg-4">
-            <router-link to="/">About Me</router-link>
-          </div>
-          <div class="col-lg-4">
-            <router-link to="/resume">Resume</router-link> 
-          </div>
-          <div class="col-lg-4">
-            <router-link to="/project">Project</router-link>
+      <div class="nav-container">
+        <div id="nav">
+          <div class="row align-items-center">
+            <div class="col-lg-4">
+              <router-link to="/">About Me</router-link>
+            </div>
+            <div class="col-lg-4">
+              <router-link to="/resume">Resume</router-link> 
+            </div>
+            <div class="col-lg-4">
+              <router-link to="/project">Project</router-link>
+            </div>
           </div>
         </div>
       </div>
     </div>
 
     <div class="content-card-container">
-      <router-view />
+      <transition name="slide-fade">
+        <router-view />
+      </transition>
     </div>
   </div>
 </template>
@@ -40,13 +44,54 @@ html, body {
   padding: 0px;
 }
 
-#app {
+#app, .overlay {
   font-family: 'Inter', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
+  background-color: #FAFAFD;
   color: #383838;
   font-size: 16px;
+}
+
+.overlay {
+  background: url(./assets/backdrops.webp) no-repeat;
+  background-size: cover;
+  background-position: bottom;
+  background-blend-mode: hue;
+  background-color: rgba(240, 246, 251, 0.88);
+  padding-bottom: 32px;
+}
+
+.slide-fade-enter-active {
+  animation: enter-animation 256ms;
+}
+
+.slide-fade-leave-active {
+  animation: enter-animation 256ms reverse;
+}
+
+@keyframes enter-animation {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  25% {
+    transform: scale(0.25);
+    opacity: 0.25;
+  }
+  50% {
+    transform: scale(0.5);
+    opacity: 0.5;
+  }
+  75% {
+    transform: scale(0.75);
+    opacity: 0.75;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 .avatar-container {
@@ -54,26 +99,37 @@ html, body {
   max-width: 480px;
   margin: auto;
   padding: 40px;
-  background-color: red;
 }
 
 .nav-container {
   width: 100%;
   max-width: 720px;
   margin: auto;
-  background-color: yellow;
 }
 
 .content-card-container {
   width: 100%;
-  background-color: purple;
+  min-height: 100vh;
+  background-color: #FAFAFD;
   border-top-left-radius: 32px;
   border-top-right-radius: 32px;
+  transform: translateY(-32px);
+}
+
+.star-container {
+  display: contents;
 }
 
 .card {
   background-color: white;
   border: 2px solid rgba(56, 56, 56, 0.08);
+  border-radius: 16px;
+  padding: 24px 32px;
+  margin: 24px;
+}
+
+.card-blue {
+  background-color: rgba(236, 235, 252, 0.25);
   border-radius: 16px;
   padding: 32px;
   margin: 24px;
@@ -88,7 +144,7 @@ html, body {
 }
 
 #nav {
-  padding: 32px;
+  padding: 32px 0px;
   padding-bottom: 0px;
 
   a {
@@ -113,6 +169,81 @@ html, body {
   max-width: 100px;
 }
 
+.overview {
+  width: 100%;
+  max-width: 100px;
+}
+
+.btn-default {
+  background-color: #5577F0;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 192px;
+  padding: 8px;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn-icon {
+  width: 100%;
+  max-width: 18px;
+}
+
+.btn-dropdown {
+  background-color: #EEF5FF;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 192px;
+  padding: 8px;
+  color: #383838;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.btn-icon-dropdown {
+  width: 100%;
+  max-width: 14px;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  border-radius: 8px;
+  width: 100%;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  padding: 8px;
+  font-size: 14px;
+}
+
+.dropdown-content a {
+  color: #383838;
+  margin: 4px 0px;
+  padding: 4px 0px;
+  text-decoration: none;
+  display: block;
+  transition: 0.5s;
+}
+
+.dropdown-content a:hover {
+  background-color: #EEF5FF;
+  transform: scale(1.1);
+  transition: 0.5s;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
 /* 
 ===================================================================
 Content
@@ -134,6 +265,32 @@ Content
   font-size: 32px;
   font-weight: bold;
   margin: 0px 0px;
+}
+
+.section-title {
+  color: #383838;
+  font-size: 24px;
+}
+
+.section-subtitle {
+  color: #383838;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.7em;
+}
+
+.section-text {
+  color: #383838;
+  font-size: 20px;
+  line-height: 1.7em;
+  padding-bottom: 12px;
+}
+
+.section-mini-text {
+  color: rgba(56, 56, 56, 0.7);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.7em;
 }
 
 
@@ -206,8 +363,8 @@ Util
   flex-direction: column;
   flex-grow: 0;
   flex-shrink: 0;
-  flex-basis: 16.67%;
-  max-width: 16.67%;
+  flex-basis: 16.666%;
+  max-width: 16.666%;
 }
 
 .col-3 {
@@ -233,8 +390,8 @@ Util
   flex-direction: column;
   flex-grow: 0;
   flex-shrink: 0;
-  flex-basis: 41.67%;
-  max-width: 41.67%;
+  flex-basis: 41.666%;
+  max-width: 41.666%;
 }
 
 .col-6 {
@@ -260,8 +417,8 @@ Util
   flex-direction: column;
   flex-grow: 0;
   flex-shrink: 0;
-  flex-basis: 66.67%;
-  max-width: 66.67%;
+  flex-basis: 66.666%;
+  max-width: 66.666%;
 }
 
 .col-9 {
@@ -287,8 +444,8 @@ Util
   flex-direction: column;
   flex-grow: 0;
   flex-shrink: 0;
-  flex-basis: 91.67%;
-  max-width: 91.67%;
+  flex-basis: 91.666%;
+  max-width: 91.666%;
 }
 
 .col-12 {
@@ -314,8 +471,8 @@ Util
   flex-direction: column;
   flex-grow: 0;
   flex-shrink: 0;
-  flex-basis: 16.67%;
-  max-width: 16.67%;
+  flex-basis: 16.666%;
+  max-width: 16.666%;
 }
 
 .col-md-3 {
@@ -341,8 +498,8 @@ Util
   flex-direction: column;
   flex-grow: 0;
   flex-shrink: 0;
-  flex-basis: 41.67%;
-  max-width: 41.67%;
+  flex-basis: 41.666%;
+  max-width: 41.666%;
 }
 
 .col-md-6 {
@@ -368,8 +525,8 @@ Util
   flex-direction: column;
   flex-grow: 0;
   flex-shrink: 0;
-  flex-basis: 66.67%;
-  max-width: 66.67%;
+  flex-basis: 66.666%;
+  max-width: 66.666%;
 }
 
 .col-md-9 {
@@ -395,8 +552,8 @@ Util
   flex-direction: column;
   flex-grow: 0;
   flex-shrink: 0;
-  flex-basis: 91.67%;
-  max-width: 91.67%;
+  flex-basis: 91.666%;
+  max-width: 91.666%;
 }
 
 .col-md-12 {
@@ -422,8 +579,8 @@ Util
   flex-direction: column;
   flex-grow: 0;
   flex-shrink: 0;
-  flex-basis: 16.67%;
-  max-width: 16.67%;
+  flex-basis: 16.666%;
+  max-width: 16.666%;
 }
 
 .col-lg-3 {
@@ -449,8 +606,8 @@ Util
   flex-direction: column;
   flex-grow: 0;
   flex-shrink: 0;
-  flex-basis: 41.67%;
-  max-width: 41.67%;
+  flex-basis: 41.666%;
+  max-width: 41.666%;
 }
 
 .col-lg-6 {
@@ -476,8 +633,8 @@ Util
   flex-direction: column;
   flex-grow: 0;
   flex-shrink: 0;
-  flex-basis: 66.67%;
-  max-width: 66.67%;
+  flex-basis: 66.666%;
+  max-width: 66.666%;
 }
 
 .col-lg-9 {
@@ -503,8 +660,8 @@ Util
   flex-direction: column;
   flex-grow: 0;
   flex-shrink: 0;
-  flex-basis: 91.67%;
-  max-width: 91.67%;
+  flex-basis: 91.666%;
+  max-width: 91.666%;
 }
 
 .col-lg-12 {
