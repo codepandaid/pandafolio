@@ -232,16 +232,17 @@ Common
   font-size: 14px;
 }
 
-.dropdown-content a {
+.dropdown-content p {
   color: #383838;
   margin: 4px 0px;
   padding: 4px 0px;
   text-decoration: none;
   display: block;
   transition: 0.5s;
+  cursor: pointer;
 }
 
-.dropdown-content a:hover {
+.dropdown-content p:hover {
   background-color: #EEF5FF;
   transform: scale(1.1);
   transition: 0.5s;

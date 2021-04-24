@@ -4,134 +4,11 @@
       <div class="col-12 col-md-12 col-lg-6">
         <div class="row align-items-center">
           <div class="col-lg-12">
-            <div class="card">
-              <h2 class="section-title">Skill</h2>
-
-              <div class="row align-items-center row-line">
-                <div class="col-12 col-lg-8">
-                  <span class="section-subtitle">
-                    Dart
-                  </span>
-                </div>
-                <div class="col-12 col-lg-4">
-                  <div class="star-container">
-                    <div class="row align-items-center">
-                      <div class="col">
-                        <img class="star-rating" src="../assets/icon/icon-star-full.svg" alt="star">
-                      </div>
-                      <div class="col">
-                        <img class="star-rating" src="../assets/icon/icon-star-full.svg" alt="star">
-                      </div>
-                      <div class="col">
-                        <img class="star-rating" src="../assets/icon/icon-star-full.svg" alt="star">
-                      </div>
-                      <div class="col">
-                        <img class="star-rating" src="../assets/icon/icon-star-empty.svg" alt="star">
-                      </div>
-                      <div class="col">
-                        <img class="star-rating" src="../assets/icon/icon-star-empty.svg" alt="star">
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="row align-items-center row-line">
-                <div class="col-12 col-lg-8">
-                  <span class="section-subtitle">
-                    Mobile Apps Development
-                  </span>
-                </div>
-                <div class="col-12 col-lg-4">
-                  <div class="star-container">
-                    <div class="row align-items-center">
-                      <div class="col">
-                        <img class="star-rating" src="../assets/icon/icon-star-full.svg" alt="star">
-                      </div>
-                      <div class="col">
-                        <img class="star-rating" src="../assets/icon/icon-star-full.svg" alt="star">
-                      </div>
-                      <div class="col">
-                        <img class="star-rating" src="../assets/icon/icon-star-half.svg" alt="star">
-                      </div>
-                      <div class="col">
-                        <img class="star-rating" src="../assets/icon/icon-star-empty.svg" alt="star">
-                      </div>
-                      <div class="col">
-                        <img class="star-rating" src="../assets/icon/icon-star-empty.svg" alt="star">
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="row align-items-center row-line last">
-                <div class="col-12 col-lg-8">
-                  <span class="section-subtitle">
-                    Java
-                  </span>
-                </div>
-                <div class="col-12 col-lg-4">
-                  <div class="star-container">
-                    <div class="row align-items-center">
-                      <div class="col">
-                        <img class="star-rating" src="../assets/icon/icon-star-full.svg" alt="star">
-                      </div>
-                      <div class="col">
-                        <img class="star-rating" src="../assets/icon/icon-star-full.svg" alt="star">
-                      </div>
-                      <div class="col">
-                        <img class="star-rating" src="../assets/icon/icon-star-empty.svg" alt="star">
-                      </div>
-                      <div class="col">
-                        <img class="star-rating" src="../assets/icon/icon-star-empty.svg" alt="star">
-                      </div>
-                      <div class="col">
-                        <img class="star-rating" src="../assets/icon/icon-star-empty.svg" alt="star">
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <star-rating-card :sectionTitle="'Skill'" :starRatingData="resumeData.starRatingData"></star-rating-card>
           </div>
           <div class="col-12 col-lg-12">
             <div class="card">
-              <h2 class="section-title">Education</h2>
-
-              <div class="row align-items-start stepper-line">
-                <div class="stepper-dots"></div>
-                <div class="col-12 col-lg-12 row-line">
-                  <div class="stepper-content">
-                    <span class="section-subtitle">
-                      Dart
-                    </span>
-                    <span class="section-mini-text" style="padding: 8px 0px;">
-                      Computer Science Departement
-                    </span>
-                    <span class="section-mini-text" style="padding-bottom: 8px;">
-                      2018-present
-                    </span>
-                  </div>
-                </div>
-              </div>
-
-              <div class="row align-items-start stepper-line stepper-last">
-                <div class="stepper-dots"></div>
-                <div class="col-12 col-lg-12 row-line last">
-                  <div class="stepper-content">
-                    <span class="section-subtitle">
-                      SMA Negeri 2 Kota Bekasi
-                    </span>
-                    <span class="section-mini-text" style="padding: 8px 0px;">
-                      Mathematics and Natural Sciences
-                    </span>
-                    <span class="section-mini-text" style="padding-bottom: 8px;">
-                      2015-2018
-                    </span>
-                  </div>
-                </div>
-              </div>
+              <stepper-card :sectionTitle="'Education'" :stepperData="educationDatas"></stepper-card>
             </div>
           </div>
         </div>
@@ -139,67 +16,7 @@
 
       <div class="col-12 col-md-12 col-lg-6">
         <div class="card">
-          <h2 class="section-title">Experience</h2>
-
-          <div class="row align-items-start stepper-line">
-            <div class="col-12 col-lg-12 row-line">
-              <div class="stepper-dots"></div>
-              <div class="stepper-content">
-                <span class="section-subtitle">
-                  Computer Lab Assistant
-                </span>
-                <span class="section-mini-text">
-                  <strong>IPB University</strong>
-                </span>
-                <span class="section-mini-text" style="padding: 8px 0px;">
-                  Laboratory assistant for Data Structure Course.
-                </span>
-                <span class="section-mini-text" style="padding-bottom: 8px;">
-                  February 2021 - present
-                </span>
-              </div>
-            </div>
-          </div>
-
-          <div class="row align-items-start stepper-line">
-            <div class="col-12 col-lg-12 row-line">
-              <div class="stepper-dots"></div>
-              <div class="stepper-content">
-                <span class="section-subtitle">
-                  Head of Public Relations
-                </span>
-                <span class="section-mini-text">
-                  <strong>IT TODAY 2020</strong>
-                </span>
-                <span class="section-mini-text" style="padding: 8px 0px;">
-                  Elected as head of the Public Relations Division in IT TODAY 2020. I am Responsible for managing all social media and becoming the face of IT Today 2020 in front of the participants.
-                </span>
-                <span class="section-mini-text" style="padding-bottom: 8px;">
-                  February 2020 - October 2020
-                </span>
-              </div>
-            </div>
-          </div>
-
-          <div class="row align-items-start stepper-line stepper-last">
-            <div class="col-12 col-lg-12 row-line last">
-              <div class="stepper-dots"></div>
-              <div class="stepper-content">
-                <span class="section-subtitle">
-                  Head of Public Relations
-                </span>
-                <span class="section-mini-text">
-                  <strong>Keluarga Mahasiswa Buddhis IPB</strong>
-                </span>
-                <span class="section-mini-text" style="padding: 8px 0px;">
-                  Elected as head of the Public Relations Division in KMB IPB. I am Responsible for managing all social media and becoming the face of IT Today 2020 in front of the participants.
-                </span>
-                <span class="section-mini-text" style="padding-bottom: 8px;">
-                  February 2020 - October 2020
-                </span>
-              </div>
-            </div>
-          </div>
+          <stepper-card :sectionTitle="'Experience'" :stepperData="experienceDatas"></stepper-card>
         </div>
       </div>
     </div>
@@ -209,10 +26,31 @@
 <script lang="ts">
 import Vue from "vue";
 
+import ResumeModel from "@/model/resume";
+
+import StarRatingCard from "@/components/StarRatingCard.vue";
+import StepperCard from "@/components/StepperCard.vue";
+
 export default Vue.extend({
   name: "Resume",
   components: {
+    StarRatingCard,
+    StepperCard
   },
+  data() {
+    return {
+      resumeData: new ResumeModel()
+    }
+  },
+  computed: {
+    educationDatas(): any {
+      return this.resumeData.educationData;
+    },
+
+    experienceDatas(): any {
+      return this.resumeData.experienceData;
+    }
+  }
 });
 </script>
 
