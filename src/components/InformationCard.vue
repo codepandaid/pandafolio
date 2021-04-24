@@ -30,7 +30,6 @@ export default Vue.extend({
     },
     informationData: {
       type: [Object, Array],
-    //   required: true,
       default: () => [
           {
             subtitle: "Subtitle",

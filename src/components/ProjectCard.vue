@@ -52,7 +52,6 @@ export default Vue.extend({
   props: {
     projectData: {
       type: [Object, Array],
-    //   required: true,
       default: () => [
           {
             logoType: "local",

@@ -57,7 +57,6 @@ export default Vue.extend({
     },
     stepperData: {
       type: [Object, Array],
-      required: true,
       default: () => [
           {
             sectionSubtitle: "Section Subtitle",

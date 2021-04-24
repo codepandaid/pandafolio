@@ -225,7 +225,6 @@ export default Vue.extend({
     },
     starRatingData: {
       type: [Object, Array],
-      required: true,
       default: () => [
           {
             subtitle: "Subtitle",
