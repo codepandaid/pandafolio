@@ -236,7 +236,6 @@ export default Vue.extend({
   },
   computed: {
       starRatingDatas() {
-        console.log("cek star data : ", this.starRatingData)
         return this.starRatingData;
       }
   }

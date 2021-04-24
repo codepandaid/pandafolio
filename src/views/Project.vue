@@ -13,7 +13,7 @@
                 <div class="btn-dropdown">
                   <div class="row align-items-center text-left">
                     <div class="col-10 col-lg-10">
-                      <span>Semua</span>
+                      <span>{{ filterType }}</span>
                     </div>
                     <div class="col-2 col-lg-2">
                       <img class="btn-icon-dropdown" src="../assets/icon/icon-btn-dropdown.svg" alt="icon-btn">
@@ -21,11 +21,12 @@
                   </div>
                 </div>
                 <div class="dropdown-content">
-                  <p>UI/UX</p>
-                  <p>Fullstack Engineer</p>
-                  <p>Frontend Engineer</p>
-                  <p>Backend Engineer</p>
-                  <p>Infrastructure Engineer</p>
+                  <div>
+                    <p @click="filter('semua')">Semua</p>
+                  </div>
+                  <div v-for="(data,index) in filterData" :key="index">
+                    <p @click="filter(data)">{{ data }}</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -34,9 +35,7 @@
       </div>
 
       <div class="col-12 col-md-6 col-lg-12">
-        <project-card></project-card>
-        <project-card></project-card>
-        <project-card></project-card>
+        <project-card :projectData="tempData"></project-card>
       </div>
 
     </div>
@@ -46,6 +45,7 @@
 <script lang="ts">
 import Vue from "vue";
 
+import ProjectModel from "@/model/project";
 import ProjectCard from "@/components/ProjectCard.vue";
 
 export default Vue.extend({
@@ -53,6 +53,32 @@ export default Vue.extend({
   components: {
     ProjectCard
   },
+  data() {
+    return {
+      projectData: new ProjectModel(),
+      tempData: [],
+      filterType: "semua"
+    }
+  },
+  computed: {
+    filterData(): any {
+      return [...new Set(this.projectData.projectData.map(item => item.projectPosition))];
+    }
+  },
+  created() {
+    this.tempData = this.projectData.projectData;
+  },
+  methods: {
+    filter(type: string) {
+      this.filterType = type;
+      if(type === "semua") {
+        return this.tempData = this.projectData.projectData;
+      }
+      this.tempData = this.projectData.projectData.filter((item,index) => {
+        return item.projectPosition === type;
+      })
+    }
+  }
 });
 </script>
 

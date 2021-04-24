@@ -57,13 +57,13 @@ export default Vue.extend({
   },
   data() {
     return {
-      InformationData: new AboutModel()
+      InformationData: new AboutModel(),
     }
   },
   computed: {
     overviewData(): any {
       return this.InformationData.overviewData;
-    }
+    },
   }
 });
 </script>

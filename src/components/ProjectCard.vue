@@ -1,68 +1,80 @@
 <template>
-    <div class="card-glow">
+  <div>
+    <div v-if="projectDatas && projectDatas.length !== 0">
+      <div v-for="(data,index) in projectDatas" :key="index" class="card-glow">
         <div class="row align-items-center">
-        <div class="col-12 col-md-12 col-lg-3">
-            <img class="project-logo" alt="logo-panda" :src="require(`@/assets/${cardLogo}`)" />
-        </div>
-        <div class="col-12 col-md-12 col-lg-9 text-left">
-            <h2 class="project-name">My Project</h2>
-            <p class="project-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris fermentum blandit elit, eget porttitor lectus fermentum sed. Sed eget mi viverra, maximus magna et, congue dui.</p>
-            <div class="row align-items-center text-center">
-            <div class="col-12 col-md-12 col-lg-3">
-                <div class="badge">
-                Feb 21 - Apr 21
-                </div>
-            </div>
-            <div class="col-12 col-md-12 col-lg-3">
-                <div class="badge">
-                Fullstack Engineer
-                </div>
-            </div>
-            <div class="col-12 col-md-12 col-lg-3"></div>
-            <div class="col-12 col-md-12 col-lg-3">
-                <div class="btn-default">
-                <div class="row align-items-center text-center">
-                    <div class="col-lg-10">
-                    <span>View Project</span>
-                    </div>
-                    <div class="col-lg-2">
-                    <img class="btn-icon" src="../assets/icon/icon-btn-external.svg" alt="icon-btn">
+          <div class="col-12 col-md-12 col-lg-3">
+              <img class="project-logo" alt="logo-panda" :src="data.logoType === 'local'? require(`@/assets/${data.cardLogo}`) : data.cardLogo" />
+          </div>
+          <div class="col-12 col-md-12 col-lg-9 text-left">
+              <h2 class="project-name">{{ data.projectName }}</h2>
+              <p class="project-desc" style="line-height: 1.7em;">{{ data.projectDesc }}</p>
+              <div class="row align-items-center text-center">
+                <div class="col-12 col-md-12 col-lg-3">
+                    <div class="badge">
+                      {{ data.projectDate }}
                     </div>
                 </div>
+                <div class="col-12 col-md-12 col-lg-3">
+                    <div class="badge">
+                      {{ data.projectPosition }}
+                    </div>
                 </div>
-            </div>
-            </div>
+                <div class="col-12 col-md-12 col-lg-3"></div>
+                <div class="col-12 col-md-12 col-lg-3">
+                    <div class="btn-default" @click="btnAction(data.projectLink)">
+                      <div class="row align-items-center text-center">
+                          <div class="col-lg-10">
+                            <span>View Project</span>
+                          </div>
+                          <div class="col-lg-2">
+                            <img class="btn-icon" src="../assets/icon/icon-btn-external.svg" alt="icon-btn">
+                          </div>
+                      </div>
+                    </div>
+                </div>
+              </div>
+          </div>
         </div>
-        </div>
+      </div>
     </div>
+    <div v-else class="text-center">
+      <h2 class="project-name">Tidak ada Project Terdaftar</h2>
+    </div>
+  </div>
 </template>
 
 <script>
 import Vue from "vue";
 
 export default Vue.extend({
-  name: "InformationCard",
+  name: "ProjectCard",
   props: {
-    cardLogo: {
-        type: String,
-        default: "project-default-logo.svg"
-    },
-    starRatingData: {
+    projectData: {
       type: [Object, Array],
     //   required: true,
       default: () => [
           {
-            subtitle: "Subtitle",
-            starRating: 0
+            logoType: "local",
+            cardLogo: "project-default-logo.svg",
+            projectName: "Project Name",
+            projectDesc: "Project Description",
+            projectDate: "Project Date",
+            projectPosition: "Project Position",
+            projectLink: "https://google.com"
           },
       ]
     },
   },
   computed: {
-      starRatingDatas() {
-        console.log("cek star data : ", this.starRatingData)
-        return this.starRatingData;
-      }
+    projectDatas() {
+      return this.projectData;
+    }
+  },
+  methods: {
+    btnAction(link) {
+      window.open(link);
+    }
   }
 });
 
