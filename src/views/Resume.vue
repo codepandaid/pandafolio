@@ -4,96 +4,7 @@
       <div class="col-12 col-md-12 col-lg-6">
         <div class="row align-items-center">
           <div class="col-lg-12">
-            <div class="card">
-              <h2 class="section-title">Skill</h2>
-
-              <div class="row align-items-center row-line">
-                <div class="col-12 col-lg-8">
-                  <span class="section-subtitle">
-                    Dart
-                  </span>
-                </div>
-                <div class="col-12 col-lg-4">
-                  <div class="star-container">
-                    <div class="row align-items-center">
-                      <div class="col">
-                        <img class="star-rating" src="../assets/icon/icon-star-full.svg" alt="star">
-                      </div>
-                      <div class="col">
-                        <img class="star-rating" src="../assets/icon/icon-star-full.svg" alt="star">
-                      </div>
-                      <div class="col">
-                        <img class="star-rating" src="../assets/icon/icon-star-full.svg" alt="star">
-                      </div>
-                      <div class="col">
-                        <img class="star-rating" src="../assets/icon/icon-star-empty.svg" alt="star">
-                      </div>
-                      <div class="col">
-                        <img class="star-rating" src="../assets/icon/icon-star-empty.svg" alt="star">
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="row align-items-center row-line">
-                <div class="col-12 col-lg-8">
-                  <span class="section-subtitle">
-                    Mobile Apps Development
-                  </span>
-                </div>
-                <div class="col-12 col-lg-4">
-                  <div class="star-container">
-                    <div class="row align-items-center">
-                      <div class="col">
-                        <img class="star-rating" src="../assets/icon/icon-star-full.svg" alt="star">
-                      </div>
-                      <div class="col">
-                        <img class="star-rating" src="../assets/icon/icon-star-full.svg" alt="star">
-                      </div>
-                      <div class="col">
-                        <img class="star-rating" src="../assets/icon/icon-star-half.svg" alt="star">
-                      </div>
-                      <div class="col">
-                        <img class="star-rating" src="../assets/icon/icon-star-empty.svg" alt="star">
-                      </div>
-                      <div class="col">
-                        <img class="star-rating" src="../assets/icon/icon-star-empty.svg" alt="star">
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="row align-items-center row-line last">
-                <div class="col-12 col-lg-8">
-                  <span class="section-subtitle">
-                    Java
-                  </span>
-                </div>
-                <div class="col-12 col-lg-4">
-                  <div class="star-container">
-                    <div class="row align-items-center">
-                      <div class="col">
-                        <img class="star-rating" src="../assets/icon/icon-star-full.svg" alt="star">
-                      </div>
-                      <div class="col">
-                        <img class="star-rating" src="../assets/icon/icon-star-full.svg" alt="star">
-                      </div>
-                      <div class="col">
-                        <img class="star-rating" src="../assets/icon/icon-star-empty.svg" alt="star">
-                      </div>
-                      <div class="col">
-                        <img class="star-rating" src="../assets/icon/icon-star-empty.svg" alt="star">
-                      </div>
-                      <div class="col">
-                        <img class="star-rating" src="../assets/icon/icon-star-empty.svg" alt="star">
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <star-rating-card :sectionTitle="'Skill'" :starRatingData="resumeData.starRatingData"></star-rating-card>
           </div>
           <div class="col-12 col-lg-12">
             <div class="card">
@@ -209,9 +120,19 @@
 <script lang="ts">
 import Vue from "vue";
 
+import ResumeModel from "@/model/resume";
+
+import StarRatingCard from "@/components/StarRatingCard.vue";
+
 export default Vue.extend({
   name: "Resume",
   components: {
+    StarRatingCard
+  },
+  data() {
+    return {
+      resumeData: new ResumeModel()
+    }
   },
 });
 </script>

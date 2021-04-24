@@ -6,7 +6,7 @@
           <div class="row align-items-center">
             <div class="col-12 col-md-12 col-lg-8"></div>
             <div class="col-12 col-md-6 col-lg-2">
-              <span class="filter-text">Filter Berdasarkan:</span>
+              <span class="filter-text">Filter Category:</span>
             </div>
             <div class="col-12 col-md-6 col-lg-2">
               <div class="dropdown">
@@ -21,9 +21,11 @@
                   </div>
                 </div>
                 <div class="dropdown-content">
-                  <a href="#">Link 1</a>
-                  <a href="#">Link 2</a>
-                  <a href="#">Link 3</a>
+                  <p>UI/UX</p>
+                  <p>Fullstack Engineer</p>
+                  <p>Frontend Engineer</p>
+                  <p>Backend Engineer</p>
+                  <p>Infrastructure Engineer</p>
                 </div>
               </div>
             </div>
@@ -32,120 +34,9 @@
       </div>
 
       <div class="col-12 col-md-6 col-lg-12">
-        <div class="card-glow">
-          <div class="row align-items-center">
-            <div class="col-12 col-md-12 col-lg-3">
-              <img class="project-logo" alt="logo-panda" src="../assets/project-default-logo.svg" />
-            </div>
-            <div class="col-12 col-md-12 col-lg-9 text-left">
-              <h2 class="project-name">My Project</h2>
-              <p class="project-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris fermentum blandit elit, eget porttitor lectus fermentum sed. Sed eget mi viverra, maximus magna et, congue dui.</p>
-              <div class="row align-items-center text-center">
-                <div class="col-12 col-md-12 col-lg-3">
-                  <div class="badge">
-                    Feb 21 - Apr 21
-                  </div>
-                </div>
-                <div class="col-12 col-md-12 col-lg-3">
-                  <div class="badge">
-                    Fullstack Engineer
-                  </div>
-                </div>
-                <div class="col-12 col-md-12 col-lg-3"></div>
-                <div class="col-12 col-md-12 col-lg-3">
-                  <div class="btn-default">
-                    <div class="row align-items-center text-center">
-                      <div class="col-lg-10">
-                        <span>View Project</span>
-                      </div>
-                      <div class="col-lg-2">
-                        <img class="btn-icon" src="../assets/icon/icon-btn-external.svg" alt="icon-btn">
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-12 col-md-6 col-lg-12">
-        <div class="card-glow">
-          <div class="row align-items-center">
-            <div class="col-12 col-md-12 col-lg-3">
-              <img class="project-logo" alt="logo-panda" src="../assets/project-default-logo.svg" />
-            </div>
-            <div class="col-12 col-md-12 col-lg-9 text-left">
-              <h2 class="project-name">My Project</h2>
-              <p class="project-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris fermentum blandit elit, eget porttitor lectus fermentum sed. Sed eget mi viverra, maximus magna et, congue dui.</p>
-              <div class="row align-items-center text-center">
-                <div class="col-12 col-md-12 col-lg-3">
-                  <div class="badge">
-                    Feb 21 - Apr 21
-                  </div>
-                </div>
-                <div class="col-12 col-md-12 col-lg-3">
-                  <div class="badge">
-                    Fullstack Engineer
-                  </div>
-                </div>
-                <div class="col-12 col-md-12 col-lg-3"></div>
-                <div class="col-12 col-md-12 col-lg-3">
-                  <div class="btn-default">
-                    <div class="row align-items-center text-center">
-                      <div class="col-lg-10">
-                        <span>View Project</span>
-                      </div>
-                      <div class="col-lg-2">
-                        <img class="btn-icon" src="../assets/icon/icon-btn-external.svg" alt="icon-btn">
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-12 col-md-6 col-lg-12">
-        <div class="card-glow">
-          <div class="row align-items-center">
-            <div class="col-12 col-md-12 col-lg-3">
-              <img class="project-logo" alt="logo-panda" src="../assets/project-default-logo.svg" />
-            </div>
-            <div class="col-12 col-md-12 col-lg-9 text-left">
-              <h2 class="project-name">My Project</h2>
-              <p class="project-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris fermentum blandit elit, eget porttitor lectus fermentum sed. Sed eget mi viverra, maximus magna et, congue dui.</p>
-              <div class="row align-items-center text-center">
-                <div class="col-12 col-md-12 col-lg-3">
-                  <div class="badge">
-                    Feb 21 - Apr 21
-                  </div>
-                </div>
-                <div class="col-12 col-md-12 col-lg-3">
-                  <div class="badge">
-                    Fullstack Engineer
-                  </div>
-                </div>
-                <div class="col-12 col-md-12 col-lg-3"></div>
-                <div class="col-12 col-md-12 col-lg-3">
-                  <div class="btn-default">
-                    <div class="row align-items-center text-center">
-                      <div class="col-lg-10">
-                        <span>View Project</span>
-                      </div>
-                      <div class="col-lg-2">
-                        <img class="btn-icon" src="../assets/icon/icon-btn-external.svg" alt="icon-btn">
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <project-card></project-card>
+        <project-card></project-card>
+        <project-card></project-card>
       </div>
 
     </div>
@@ -155,9 +46,12 @@
 <script lang="ts">
 import Vue from "vue";
 
+import ProjectCard from "@/components/ProjectCard.vue";
+
 export default Vue.extend({
   name: "Project",
   components: {
+    ProjectCard
   },
 });
 </script>
@@ -177,58 +71,5 @@ export default Vue.extend({
 
 .filter-text {
   font-size: 16px;
-}
-
-.project-logo {
-  width: 100%;
-  max-width: 160px;
-  border-radius: 50%;
-}
-
-.badge {
-  background-color: rgba(173, 160, 255, 0.32);
-  margin: 8px;
-  padding: 8px;
-  border-radius: 8px;
-}
-
-@media screen and (min-width: 768px) and (max-width: 1024px) {
-  .project-logo {
-    width: 100%;
-    max-width: 128px;
-    margin: 16px auto;
-  }
-
-  .badge {
-    font-size: 12px;
-  }
-
-  .btn-default {
-    margin: 16px auto;
-  }
-}
-
-@media screen and (max-width: 767px) {
-  .project-filter-section {
-    text-align: -webkit-center;
-  }
-
-  .dropdown {
-    margin: 16px;
-  }
-
-  .project-logo {
-    width: 100%;
-    max-width: 128px;
-    margin: 16px auto;
-  }
-
-  .badge {
-    font-size: 12px;
-  }
-
-  .btn-default {
-    margin: 16px auto;
-  }
 }
 </style>

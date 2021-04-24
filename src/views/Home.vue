@@ -2,134 +2,41 @@
   <div id="home" class="home">
     <div class="row align-items-start text-left">
       <div class="col-12 col-md-12 col-lg-7">
-        <div class="card">
-          <h2 class="section-title">Description</h2>
-          <div class="row align-items-start text-left">
-            <div class="col-12 col-lg-4">
-              <span class="section-subtitle">
-                Bio
-              </span>
-            </div>
-            <div class="col-12 col-lg-8">
-              <span class="section-text">
-                Computer Science Student’s who loves tempe orek
-              </span>
-            </div>
-
-            <div class="col-12 col-lg-4">
-              <span class="section-subtitle">
-                Age
-              </span>
-            </div>
-            <div class="col-12 col-lg-8">
-              <span class="section-text">
-                20 years old
-              </span>
-            </div>
-
-            <div class="col-12 col-lg-4">
-              <span class="section-subtitle">
-                Address
-              </span>
-            </div>
-            <div class="col-12 col-lg-8">
-              <span class="section-text">
-                Veteran Street, South Bekasi
-              </span>
-            </div>
-          </div>
-        </div>
+        <information-card :sectionTitle="'Description'" :informationData="InformationData.descriptionData"></information-card>
       </div>
       <div class="col-12 col-md-12 col-lg-5">
-        <div class="card">
-          <h2 class="section-title">Contact</h2>
-
-          <div class="row align-items-start text-left">
-            <div class="col-12 col-lg-4">
-              <span class="section-subtitle">
-                Email
-              </span>
-            </div>
-            <div class="col-12 col-lg-8">
-              <span class="section-text">
-                Computer Science Student’s who loves tempe orek
-              </span>
-            </div>
-          </div>
-
-          <div class="row align-items-start text-left">
-            <div class="col-12 col-lg-4">
-              <span class="section-subtitle">
-                Phone/WA
-              </span>
-            </div>
-            <div class="col-12 col-lg-8">
-              <span class="section-text">
-                +62-895-0715-3745
-              </span>
-            </div>
-          </div>
-
-          <div class="row align-items-start text-left">
-            <div class="col-12 col-lg-4">
-              <span class="section-subtitle">
-                Line
-              </span>
-            </div>
-            <div class="col-12 col-lg-8">
-              <span class="section-text">
-                berly_st2120
-              </span>
-            </div>
-          </div>
-        </div>
+        <information-card :sectionTitle="'Contact'" :informationData="InformationData.contactData"></information-card>
       </div>
     </div>
 
     <div class="row align-items-center text-center">
       <div class="col-6 col-md-6 col-lg-3">
-        <div class="card-blue">
-          <img class="overview" alt="logo-panda" src="../assets/icon/overview-1.svg" />
-        </div>
-        <span class="section-subtitle">
-          Projects Done
-        </span>
-        <span class="section-text">
-          7 Projects
-        </span>
+        <overview-card
+          :cardLogo="overviewData[0].cardLogo"
+          :cardTitle="overviewData[0].cardTitle"
+          :cardValue="overviewData[0].cardValue"
+        ></overview-card>
       </div>
       <div class="col-6 col-md-6 col-lg-3">
-        <div class="card-blue">
-          <img class="overview" alt="logo-panda" src="../assets/icon/overview-2.svg" />
-        </div>
-        <span class="section-subtitle">
-          Points Earned
-        </span>
-        <span class="section-text">
-          150 points
-        </span>
+        <overview-card
+          :cardLogo="overviewData[1].cardLogo"
+          :cardTitle="overviewData[1].cardTitle"
+          :cardValue="overviewData[1].cardValue"
+        ></overview-card>
       </div>
       <div class="col-6 col-md-6 col-lg-3">
-        <div class="card-blue">
-          <img class="overview" alt="logo-panda" src="../assets/icon/overview-3.svg" />
-        </div>
-        <span class="section-subtitle">
-          Skills
-        </span>
-        <span class="section-text">
-          6 skills
-        </span>
+        <overview-card
+          :cardLogo="overviewData[2].cardLogo"
+          :cardTitle="overviewData[2].cardTitle"
+          :cardValue="overviewData[2].cardValue"
+        ></overview-card>
       </div>
       <div class="col-6 col-md-6 col-lg-3">
-        <div class="card-blue">
-          <img class="overview" alt="logo-panda" src="../assets/icon/overview-4.svg" />
-        </div>
-        <span class="section-subtitle">
-          Experiences
-        </span>
-        <span class="section-text">
-          3 experiences
-        </span>
+        <overview-card
+          :cardLogo="overviewData[3].cardLogo"
+          :cardTitle="overviewData[3].cardTitle"
+          :cardValue="overviewData[3].cardValue"
+        ></overview-card>
       </div>
     </div>
   </div>
@@ -137,11 +44,27 @@
 
 <script lang="ts">
 import Vue from "vue";
+import AboutModel from "@/model/about";
+
+import InformationCard from "@/components/InformationCard.vue";
+import OverviewCard from "@/components/OverviewCard.vue";
 
 export default Vue.extend({
   name: "Home",
   components: {
+    InformationCard,
+    OverviewCard
   },
+  data() {
+    return {
+      InformationData: new AboutModel()
+    }
+  },
+  computed: {
+    overviewData(): any {
+      return this.InformationData.overviewData;
+    }
+  }
 });
 </script>
 
