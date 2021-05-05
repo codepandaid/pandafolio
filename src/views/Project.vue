@@ -56,7 +56,15 @@ export default Vue.extend({
   data() {
     return {
       projectData: new ProjectModel(),
-      tempData: [],
+      tempData: [{
+        logoType: "",
+         cardLogo: "string",
+         projectName: "string",
+         projectDesc: "string",
+         projectDate: "string",
+         projectPosition: "string",
+         projectLink: "string",
+      }],
       filterType: "semua"
     }
   },
